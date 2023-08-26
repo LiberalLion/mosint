@@ -9,7 +9,7 @@ def Psbdmp(mail,_verbose=None):
 			res = requests.get(f"https://psbdmp.ws/api/search/{mail}",headers={ "Accept": "application/json" }).json().get('data') or []
 			if len(res):
 				for i in res:
-					print(f"{bcolors.OKGREEN}|-- {bcolors.ENDC}"+"https://pastebin.com/"+i['id'])
+					print(f"{bcolors.OKGREEN}|-- {bcolors.ENDC}https://pastebin.com/" + i['id'])
 			else:
 				print(f"{bcolors.FAIL}No psbdump records found!{bcolors.ENDC}")
 		except:

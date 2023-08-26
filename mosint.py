@@ -33,8 +33,8 @@ EMAIL_REGEX = r'(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)'
 while True:
     mail=input(f"{bcolors.OKBLUE}MAIL > {bcolors.ENDC}")
 
-    if (mail == "q" or mail == "Q" or mail == "exit"):
-        print("Thank you for using "+f"{bcolors.BOLD}MOSINT{bcolors.ENDC}.")
+    if mail in ["q", "Q", "exit"]:
+        print(f"Thank you for using {bcolors.BOLD}MOSINT{bcolors.ENDC}.")
         break
     elif not re.match(EMAIL_REGEX, mail):
         print(f"{bcolors.FAIL}Email format is wrong!{bcolors.ENDC}")
@@ -46,13 +46,13 @@ while True:
         Header(title)
         VerifyMail(verifyApi,mail,_verbose=True)
 
-    if (socialscan == "True" or socialscan == "T" or socialscan == "true"):
+    if socialscan in ["True", "T", "true"]:
         from modules.SocialScan import SocialScan
         title = "SOCIAL SCAN"
         Header(title)
         SocialScan(mail,_verbose=True)
 
-    if (leakeddb == "True" or leakeddb == "T" or leakeddb == "true"):
+    if leakeddb in ["True", "T", "true"]:
         from modules.LeakedDB import LeakedDB
         title = "LEAKED DB [Password dumps]"
         Header(title)
@@ -70,31 +70,31 @@ while True:
         Header(title)
         Hunter(mail,hunterApi,_verbose=True)
 
-    if (dbdata == "True" or dbdata == "T" or dbdata == "true"):
+    if dbdata in ["True", "T", "true"]:
         from modules.RelatedNumbers import RelatedNumbers
         title = "RELATED PHONE NUMBERS"
         Header(title)
         RelatedNumbers(mail,_verbose=True)
 
-    if (tcrwd == "True" or tcrwd == "T" or tcrwd == "true"):
+    if tcrwd in ["True", "T", "true"]:
         from modules.RelatedDomains import RelatedDomains
         title = "RELATED DOMAINS"
         Header(title)
         RelatedDomains(mail,_verbose=True)
 
-    if (pastebindumps == "True" or pastebindumps == "T" or pastebindumps == "true"):
+    if pastebindumps in ["True", "T", "true"]:
         from modules.Psbdmp import Psbdmp
         title = "PASTEBIN DUMPS"
         Header(title)
         Psbdmp(mail,_verbose=True)
 
-    if (googlesearch == "True" or googlesearch == "T" or googlesearch == "true"):
+    if googlesearch in ["True", "T", "true"]:
         from modules.Googling import Googling
         title = "GOOGLING"
         Header(title)
         Googling(mail,_verbose=True)
 
-    if (dns == "True" or dns == "T" or dns == "true"):
+    if dns in ["True", "T", "true"]:
         from modules.DNS import DNS
         title = "DNS LOOKUP"
         Header(title)
